@@ -15,6 +15,7 @@
   --color5-bg: rgba(0,219,255,0.15);
   --color6-bg: rgba(26,152,255,0.15);
   --color7-bg: rgba(144,144,255,0.15);
+  --color-shadow: rgba(161,177,204,0.4);
 }
 .nexmoe-archives .tagcloud {
   margin-bottom: 13px;
@@ -240,7 +241,7 @@ article a:hover {
   text-decoration: underline;
 }
 article p {
-  margin: 25px 0;
+  margin: 24px 0;
   position: relative;
 }
 article p:after {
@@ -308,7 +309,7 @@ article h4,
 article h5,
 article h6 {
   color: #111;
-  margin: 25px 0;
+  margin: 24px 0;
 }
 article h4,
 article h5,
@@ -334,11 +335,11 @@ article h2 {
 article h2:before {
   content: '';
   width: 100%;
-  padding: 0px 25px;
+  padding: 0px 24px;
   border-bottom: 1px solid #eee;
   position: absolute;
   bottom: -1px;
-  left: -25px;
+  left: -24px;
   box-sizing: unset;
 }
 article h2:after {
@@ -369,7 +370,7 @@ article h6 {
 }
 article blockquote {
   color: #666;
-  margin: 25px 0;
+  margin: 24px 0;
   padding: 0.1em 2.2em;
   background-color: #f8f8f8;
   line-height: 28px;
@@ -398,7 +399,7 @@ article hr {
   display: block;
   border: 0;
   border-top: 1px dashed #ccc;
-  margin: 25px 0;
+  margin: 24px 0;
   padding: 0;
 }
 article sub,
@@ -587,7 +588,7 @@ font.douyin {
   -webkit-box-shadow: 0 0 0 1px #eee !important;
   box-shadow: 0 0 0 1px #eee !important;
   border-radius: 10px !important;
-  margin: 25px 0 !important;
+  margin: 24px 0 !important;
   height: 90px;
 }
 .aplayer .aplayer-info {
@@ -816,6 +817,7 @@ article.nexmoe-py ul li img {
   padding-left: 17px;
   bottom: 10px;
   margin-top: 10px;
+  word-wrap: break-word;
 }
 #nexmoe-search-space .search-container .search-body .search-result a .keyword {
   color: var(--color-primary);
@@ -991,7 +993,7 @@ body {
   width: calc(100% - 90px);
   overflow: hidden;
   border-radius: 100%;
-  box-shadow: 0 0.3rem 2rem rgba(161,177,204,0.6);
+  box-shadow: 0 0.3rem 2rem var(--color-shadow);
 }
 #nexmoe-header .nexmoe-avatar a {
   padding-bottom: 100%;
@@ -1069,7 +1071,7 @@ body {
   margin-left: 0px;
 }
 #nexmoe-header .nexmoe-widget-wrap {
-  box-shadow: 0 0 1rem rgba(161,177,204,0.4);
+  box-shadow: 0 0 1rem var(--color-shadow);
   background-color: #fff;
   margin: 20px;
   border-radius: var(--radius);
@@ -1157,11 +1159,11 @@ body {
   position: relative;
 }
 #nexmoe-content .nexmoe-primary {
-  box-shadow: 0 0 1rem rgba(161,177,204,0.4);
+  box-shadow: 0 0 1rem var(--color-shadow);
   background-color: #fff;
   float: left;
   width: 100%;
-  padding: 25px;
+  padding: 24px;
   position: absolute;
   min-height: 100vh;
 }
@@ -1205,20 +1207,17 @@ body {
 #nexmoe-content .nexmoe-posts .nexmoe-post article p:last-child {
   margin-bottom: 0;
 }
-#nexmoe-content .nexmoe-posts .nexmoe-post-meta {
-  margin: 10px 0 !important;
-}
 #nexmoe-content .nexmoe-posts .nexmoe-post:last-child {
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-cover {
   width: 100%;
-  padding-bottom: 56.25%;
   position: relative;
   overflow: hidden;
   border-radius: 16px;
   min-height: 95px;
   background-color: #eee;
+  padding-top: 20%;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-cover img {
   display: block;
@@ -1230,20 +1229,17 @@ body {
   height: 100%;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-cover h1 {
+  position: relative;
   color: #fff;
-  font-size: 2.5em;
-  font-weight: normal;
-  margin: 0;
+  font-size: 2.5rem;
   margin-top: 10px;
-  padding-left: 1px;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   box-sizing: border-box;
   text-transform: none;
-  z-index: 1;
   margin: 0;
-  padding: 25px;
+  padding: 24px;
+  z-index: 1;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.251);
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-cover h1:after {
   background-image: -moz-linear-gradient(to top, rgba(16,16,16,0.35) 25%, rgba(16,16,16,0) 100%);
@@ -1264,9 +1260,17 @@ body {
   width: 100%;
   z-index: -1;
 }
+#nexmoe-content .nexmoe-post .nexmoe-post-cover.absolute h1 {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
 #nexmoe-content .nexmoe-post .nexmoe-post-meta {
-  margin: 25px 0px;
+  margin: 10px 0px;
   font-size: 0;
+}
+#nexmoe-content .nexmoe-post .nexmoe-post-meta div {
+  display: inline-block;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-meta a {
   border-radius: 20px;
@@ -1280,9 +1284,24 @@ body {
 #nexmoe-content .nexmoe-post .nexmoe-post-meta a .nexmoefont {
   font-size: 14px;
 }
-#nexmoe-content .nexmoe-post .nexmoe-post-meta a:before,
-#nexmoe-content .nexmoe-post .nexmoe-post-meta i:before {
+#nexmoe-content .nexmoe-post .nexmoe-post-meta a:before {
   margin-right: 5px;
+}
+#nexmoe-content .nexmoe-post .nexmoe-post-meta .wechat {
+  background-color: rgba(42,174,103,0.2);
+  color: #2aae67;
+}
+#nexmoe-content .nexmoe-post .nexmoe-post-meta .zhihu {
+  background-color: rgba(5,109,232,0.2);
+  color: #056de8;
+}
+#nexmoe-content .nexmoe-post .nexmoe-post-meta .bilibili {
+  background-color: rgba(251,114,153,0.2);
+  color: #fb7299;
+}
+#nexmoe-content .nexmoe-post .nexmoe-post-meta .sspai {
+  background-color: rgba(218,40,42,0.2);
+  color: #da282a;
 }
 #nexmoe-content .nexmoe-post .nexmoe-post-copyright {
   margin: 0 -25px;
@@ -1309,8 +1328,8 @@ body {
 }
 #nexmoe-content .nexmoe-post-footer {
   background-color: #f5f6f5;
-  padding: 25px;
-  margin: -25px;
+  padding: 24px;
+  margin: -24px;
   margin-top: 0;
 }
 #nexmoe-content:after {
@@ -1369,7 +1388,7 @@ body {
   }
 }
 .nexmoe-post-right {
-  margin: 0px -25px;
+  margin: 0px -24px;
   text-align: right;
   width: calc(100vw - 350px);
   max-width: calc(100% + 50px);
@@ -1387,7 +1406,7 @@ body {
 }
 .nexmoe-post-right .nexmoe-fixed {
   position: fixed;
-  z-index: 1000;
+  z-index: 9999;
   height: 100vh;
   display: inline-block;
   top: 0;
@@ -1413,7 +1432,7 @@ body {
 }
 @media screen and (max-width: 1024px) {
   .nexmoe-post-right {
-    margin: 25px 0px;
+    margin: 24px 0px;
     text-align: left;
   }
   .nexmoe-post-right .nexmoe-fixed {
@@ -1434,30 +1453,34 @@ body {
   }
 }
 .nexmoe-toc {
-  width: auto;
+  text-transform: none;
+  width: 420px;
+  max-width: calc(100vw - 40px);
+  white-space: normal;
   text-align: left;
-  box-shadow: 0 0 1rem rgba(161,177,204,0.4);
+  box-shadow: 0 0 1rem var(--color-shadow);
   background-color: #fff;
   position: absolute;
   bottom: 0px;
   right: 0;
   border-radius: 16px;
-  padding: 20px;
   font-size: 16px;
   display: none;
-  z-index: 0;
-  max-height: calc(100vh - 130px);
-  overflow-y: scroll;
 }
 .nexmoe-tool .catalog:hover .nexmoe-toc {
   display: block;
 }
 .nexmoe-toc a {
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  display: block;
   color: rgba(0,0,0,0.6);
 }
 .nexmoe-toc a:hover {
-  text-decoration: underline;
-  color: var(--color-primary);
+  color: #fff;
+  background-color: var(--color-primary);
+  box-shadow: 0 1px 10px var(--color-primary);
 }
 .nexmoe-toc ol {
   padding-left: 1em;
@@ -1465,11 +1488,13 @@ body {
 }
 .nexmoe-toc li {
   margin: 0;
-  line-height: 1.7rem;
 }
 .nexmoe-toc > ol {
   margin: 0;
   padding: 0;
+  max-height: calc(100vh - 155px);
+  overflow-y: scroll;
+  padding: 20px;
 }
 .nexmoe-toc * {
   list-style: none;
@@ -1540,6 +1565,16 @@ photos img {
   .mdui-drawer {
     width: 260px;
   }
+}
+.gallery-pro {
+  column-gap: 12px;
+  column-width: 200px;
+}
+.gallery-pro > * {
+  margin-bottom: 12px;
+}
+.gallery-pro > * img {
+  width: 100%;
 }
 @-moz-keyframes shake-it {
   0% {
