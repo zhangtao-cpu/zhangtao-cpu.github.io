@@ -562,7 +562,7 @@
     
     <entry>
       <title></title>
-      <url>/2022/10/31/%E7%BE%8E%E5%9B%A2%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</url>
+      <url>/2022/10/31/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</url>
       <content type="html"><![CDATA[<h1 id="Redis常见数据类型和应用场景"><a href="#Redis常见数据类型和应用场景" class="headerlink" title="Redis常见数据类型和应用场景"></a>Redis常见数据类型和应用场景</h1><h2 id="1-String（SDS）"><a href="#1-String（SDS）" class="headerlink" title="1.String（SDS）"></a>1.String（SDS）</h2><ul>
 <li><strong>SDS 不仅可以保存文本数据，还可以保存二进制数据</strong>。因为 <code>SDS</code> 使用 <code>len</code> 属性的值而不是空字符来判断字符串是否结束，并且 SDS 的所有 API 都会以处理二进制的方式来处理 SDS 存放在 <code>buf[]</code> 数组里的数据。所以 SDS 不光能存放文本数据，而且能保存图片、音频、视频、压缩文件这样的二进制数据。</li>
 <li>**SDS 获取字符串长度的时间复杂度是 O(1)**。因为 C 语言的字符串并不记录自身长度，所以获取长度的复杂度为 O(n)；而 SDS 结构里用 <code>len</code> 属性记录了字符串长度，所以复杂度为 <code>O(1)</code>。</li>
